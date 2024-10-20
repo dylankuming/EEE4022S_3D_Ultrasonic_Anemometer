@@ -9,12 +9,6 @@ This MATLAB script connects to an Arduino via serial communication and streams w
 - **Polar Plot**: Illustrates the resultant wind direction and speed on a polar graph.
 - **Digital Readout**: Provides real-time information on the resultant wind speed, direction (in both degrees and cardinal direction), and elevation angle.
   
-## Prerequisites
-
-- **MATLAB**: Ensure MATLAB is installed on your system.
-- **Arduino**: An Arduino connected to the 3D ultrasonic anemometer, streaming wind data via serial communication.
-- **Serial Communication**: Arduino must be configured to send data in the format: `NS:<value>,EW:<value>,TB:<value>`. The data will be parsed and visualized by this script.
-
 ## How to Use
 
 ### 1. Connect the Arduino
@@ -65,14 +59,6 @@ NS:<value>,EW:<value>,TB:<value>
 - **Polar Plot**: Displays the resultant wind direction and speed on a polar graph, helping users visualize where the wind is coming from.
 - **Digital Readout**: Provides real-time numerical values for resultant wind speed, direction, and elevation.
 
-## Troubleshooting
-
-1. **Serial Port Issues**: 
-   - If you get an error related to the serial port, make sure that the correct port is specified in the script (`s = serialport("COM3", 9600);`) and that no other program is using the port.
-   
-2. **Slow Updates**: 
-   - If the visualizations are slow to update, try reducing the number of data points (`numPoints`) or adjusting the baud rate in both the Arduino and MATLAB.
-
 ## License
 
 This MATLAB script is open-source and available for modification and distribution. Feel free to use and improve upon the code.
@@ -80,4 +66,4 @@ This MATLAB script is open-source and available for modification and distributio
 ## Author
 
 - **Dylan Kuming**
-  - Date: October20, 2024
+  - Date: October, 2024
