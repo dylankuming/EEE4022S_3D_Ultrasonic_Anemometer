@@ -15,7 +15,7 @@ The **3D Ultrasonic Anemometer** measures wind speed in all three dimensions usi
 ### Components:
 - **Ultrasonic Transducers**: Measure wind speed through sound waves.
 - **Temperature Sensor**: Reads ambient temperature to account for speed of sound variation.
-- **LCD Display**: Shows real-time measurements such as wind speed, phase, and elevation.
+- **LCD Display**: Shows real-time measurements such as wind speed, phase, and elevation. (ref Matlab code for visual output option)
 - **Arduino**: Controls the ultrasonic pulses and processes the wind data.
 
 ### Project Structure:
@@ -57,19 +57,6 @@ The following components and connections are used in the project:
 - Arduino-compatible microcontroller.
 - LCD 16x2 display.
 
-## Software Setup
-
-### Prerequisites:
-- **Arduino IDE**: Download and install from [Arduino Website](https://www.arduino.cc/en/software).
-- **LiquidCrystal Library**: The Arduino code uses the `LiquidCrystal` library for the LCD display.
-
-### Steps:
-1. Clone or download the repository to your local machine.
-2. Open the `.ino` file located in the `Arduino_code` folder.
-3. Connect the components to the Arduino following the pin assignments listed above.
-4. Upload the code to the Arduino.
-5. Use the serial monitor to view the wind speed, phase, and elevation in real-time.
-
 ## Output Data
 
 The system outputs the following data over the serial interface:
@@ -89,5 +76,5 @@ This project is open-source, and all contributions are welcome. You are free to 
 ## Author
 
 - **Dylan Kuming**
-  - Date: October 20, 2024
+  - Date: October, 2024
 
