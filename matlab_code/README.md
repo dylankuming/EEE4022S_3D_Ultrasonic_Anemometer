@@ -1,6 +1,3 @@
-Here is the `README.md` for the MATLAB script you provided:
-
-```markdown
 # MATLAB Wind Visualization for 3D Ultrasonic Anemometer
 
 This MATLAB script connects to an Arduino via serial communication and streams wind speed data from the **3D Ultrasonic Anemometer** in three axes: North-South (NS), East-West (EW), and Top-Bottom (TB). The script processes this data and visualizes it in real time using multiple plot types, including 3D quiver plots, line graphs, and polar plots.
