@@ -23,3 +23,7 @@ This folder contains the KiCad design files for the **2D Digital Board** used in
 ## License
 This project is open-source under the MIT License.
 
+## Author
+
+- **Dylan Kuming**
+  - Date: October, 2024
