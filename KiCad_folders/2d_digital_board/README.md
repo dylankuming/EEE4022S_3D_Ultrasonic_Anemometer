@@ -5,7 +5,6 @@ This folder contains the KiCad design files for the **2D Digital Board** used in
 ## Features
 - **Transducer Control**: Manages the transducers for both the NS and EW axes.
 - **Multiplexing**: Uses multiplexers to route the signals to and from the appropriate transducers.
-- **Wind Speed Calculation**: Processes the received signals to determine the wind speed and direction in 2D.
 
 ## Key Components
 - **74HC139 Decoder**: Controls the transducer selection for NS and EW.
@@ -15,7 +14,6 @@ This folder contains the KiCad design files for the **2D Digital Board** used in
 ## Files in this Folder
 - `2D_Digital_Board_Schematic.sch`: The KiCad schematic of the 2D digital board.
 - `2D_Digital_Board_PCB.kicad_pcb`: The PCB layout for the 2D digital board.
-- `2D_Digital_Board_BOM.csv`: Bill of materials listing all components used on this board.
 
 ## Usage
 1. **Open the Schematic**: Load the schematic file into KiCad to view or modify the design.
