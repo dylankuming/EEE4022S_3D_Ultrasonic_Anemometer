@@ -15,7 +15,6 @@ This folder contains the KiCad design files for the **3D Digital Board** used in
 ## Files in this Folder
 - `3D_Digital_Board_Schematic.sch`: The KiCad schematic of the 3D digital board.
 - `3D_Digital_Board_PCB.kicad_pcb`: The PCB layout for the 3D digital board.
-- `3D_Digital_Board_BOM.csv`: Bill of materials listing all components used on this board.
 
 ## Usage
 1. **Open the Schematic**: Use KiCad to open and modify the schematic for the 3D digital board.
