@@ -81,12 +81,3 @@ This MATLAB script is open-source and available for modification and distributio
 
 - **Dylan Kuming**
   - Date: October20, 2024
-```
-
-### How to Use:
-1. Copy the above markdown content.
-2. Create a `README.md` file in your GitHub repository (or replace the current one if needed).
-3. Paste the content into the file.
-4. Commit and push the changes to your repository.
-
-This `README.md` provides a clear explanation of the MATLAB script's functionality, usage instructions, and a description of each part of the visualization.
