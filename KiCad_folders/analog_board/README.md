@@ -17,7 +17,6 @@ This folder contains the KiCad design files for the **Analog Board** used in the
 ## Files in this Folder
 - `Analog_Board_Schematic.sch`: The KiCad schematic of the analog board.
 - `Analog_Board_PCB.kicad_pcb`: The PCB layout for the analog board.
-- `Analog_Board_BOM.csv`: Bill of materials listing all components used on this board.
 
 ## Usage
 1. **Open the Schematic**: Load the schematic file into KiCad to view the circuit.
