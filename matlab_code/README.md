@@ -1,4 +1,4 @@
-# MATLAB Wind Visualization for 3D Ultrasonic Anemometer
+# MATLAB Wind Visualisation for 3D Ultrasonic Anemometer
 
 This MATLAB script connects to an Arduino via serial communication and streams wind speed data from the **3D Ultrasonic Anemometer** in three axes: North-South (NS), East-West (EW), and Top-Bottom (TB). The script processes this data and visualizes it in real time using multiple plot types, including 3D quiver plots, line graphs, and polar plots.
 
@@ -25,15 +25,15 @@ s = serialport("COM3", 9600); % Change "COM3" to your Arduino's COM port
 - Open the MATLAB script in MATLAB.
 - Run the script by pressing the **Run** button or by typing `run` in the MATLAB command window.
 
-### 3. Visualization
+### 3. Visualisation
 
-- The script collects 1000 data points from the Arduino and updates the following visualizations in real time:
+- The script collects 1000 data points from the Arduino and updates the following visualisations in real time:
   - **3D Quiver Plot**: A 3D vector plot that shows wind direction and magnitude in space, with a trailing line for visual history.
   - **Line Graph**: A real-time plot of wind speed over time for each axis (NS, EW, TB).
   - **Polar Plot**: Displays the resultant wind direction and speed on a polar coordinate plot.
   - **Digital Readout**: Displays current wind speed, direction (in degrees and cardinal direction), and elevation angle.
 
-### 4. Data Collection and Visualization
+### 4. Data Collection and Visualisation
 
 - The script collects data for 1000 iterations, where each data point contains the wind speed along the NS, EW, and TB axes. 
 - It calculates:
@@ -52,7 +52,7 @@ NS:<value>,EW:<value>,TB:<value>
 - Wind direction: `45.0° (North-East)`
 - Elevation angle: `12.5°`
 
-## Visualization Details
+## Visualisation Details
 
 - **3D Quiver Plot**: Visualizes wind vectors in a 3D space, showing the real-time wind direction and magnitude. The plot is updated dynamically as new data is received from the Arduino.
 - **Smoothed Line Graph**: Shows the wind speed variation over time for each axis (NS, EW, TB). The plot is continuously updated as data is received.
