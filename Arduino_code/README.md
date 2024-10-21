@@ -2,6 +2,9 @@
 
 This project implements a **3D ultrasonic anemometer** for measuring wind data across three axes: North-South (NS), East-West (EW), and Top-Bottom (TB). The system uses ultrasonic transducers and calculates wind speed by measuring the time-of-flight (ToF) of sound pulses between the transducers.
 
+The original 2D version of the code was written by **Lukas Fässler** and has been modified for 3D wind measurements by **Dylan Kuming**.
+
+
 ## Overview
 
 The **3D Ultrasonic Anemometer** measures wind speed in all three dimensions using ultrasonic transducers. The time difference in sound pulses between pairs of transducers provides the wind speed, while the direction and elevation angle are computed based on phase and vertical components.
