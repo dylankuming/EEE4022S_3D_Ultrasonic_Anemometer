@@ -253,17 +253,30 @@ void loop() {
       zerocrossing_tof_ns[dir] *= 125 >> 10;  // Convert zerocrossing ToF
     }
 
-    // Calculate wind speeds for each axis
+    // Calculate wind speeds for the three axes
     int32_t diff_ns = zerocrossing_tof_ns[NORTH_TO_SOUTH] - zerocrossing_tof_ns[SOUTH_TO_NORTH];
-    diff_ns = constrain(diff_ns, -12500, 12500);  // Constrain value to avoid wraparound
+ 
+    while (diff_ns < -12500)
+      diff_ns += 25000;
+    while (diff_ns > 12500)
+      diff_ns -= 25000;
+
     float wind_ns = windspeed(diff_ns);
 
     int32_t diff_ew = zerocrossing_tof_ns[EAST_TO_WEST] - zerocrossing_tof_ns[WEST_TO_EAST];
-    diff_ew = constrain(diff_ew, -12500, 12500);
+
+    while (diff_ew < -12500)
+      diff_ew += 25000;
+    while (diff_ew > 12500)
+      diff_ew -= 25000;
     float wind_ew = windspeed(diff_ew);
 
     int32_t diff_tb = zerocrossing_tof_ns[TOP_TO_BOTTOM] - zerocrossing_tof_ns[BOTTOM_TO_TOP];
-    diff_tb = constrain(diff_tb, -12500, 12500);
+
+    while (diff_tb < -12500)
+      diff_tb += 25000;
+    while (diff_tb > 12500)
+      diff_tb -= 25000;
     float wind_tb = windspeed(diff_tb);
 
     // Accumulate wind speed measurements
