@@ -28,7 +28,7 @@ The **3D Ultrasonic Anemometer** measures wind speed in all three dimensions usi
 
 1. **Sound Pulse Emission**: The Arduino controls the ultrasonic transducers to emit sound pulses along the three axes.
 2. **Time-of-Flight (ToF) Calculation**: The time taken for the pulse to travel between transducers is measured.
-3. **Wind Speed and Direction**: Wind speed is calculated from the difference in ToF along opposite directions (e.g., NS vs SN). The direction is determined from the phase difference.
+3. **Wind Speed and Direction**: Wind speed is calculated from the difference in ToF along opposite directions (e.g., NS vs SN). The direction is determined using trigonometry.
 4. **Vertical Wind Component**: The system also calculates the vertical wind speed using the top-bottom axis.
 
 ### Measurements:
