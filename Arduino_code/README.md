@@ -44,7 +44,7 @@ The **3D Ultrasonic Anemometer** measures wind speed in all three dimensions usi
 The following components and connections are used in the project:
 
 - **AXIS1 (Pin 13)**: Controls the first axis (Horizontal vs Vertical).
-- **AXIS2 (Pin 12)**: Controls the second axis (NS/TB vs EW).
+- **AXIS2 (Pin 12)**: Controls the second axis (NS/EW vs TB).
 - **DIRECTION (Pin 11)**: Sets the direction of the sound pulse.
 - **SIGNAL (Pin 10)**: Pulse Width Modulation (PWM) signal for driving transducers.
 - **MUTE (Pin 9)**: Mutes the amplifier when not transmitting.
