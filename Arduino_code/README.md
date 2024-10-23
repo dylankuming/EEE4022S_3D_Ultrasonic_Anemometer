@@ -47,7 +47,7 @@ The following components and connections are used in the project:
 - **AXIS2 (Pin 12)**: Controls the second axis (NS/EW vs TB).
 - **DIRECTION (Pin 11)**: Sets the direction of the sound pulse.
 - **SIGNAL (Pin 10)**: Pulse Width Modulation (PWM) signal for driving transducers.
-- **MUTE (Pin 9)**: Mutes the amplifier when not transmitting.
+- **MUTE (Pin 9)**: Mutes the amplifier during transmission and unmutes during reception.
 - **Envelope Detector (Pin 7)**: Captures the envelope of the signal.
 - **Zero-Crossing Detector (Pin 8)**: Captures the zero-crossing signal.
 - **Temperature Sensor (Pin A0)**: Reads ambient temperature for compensating the speed of sound.
