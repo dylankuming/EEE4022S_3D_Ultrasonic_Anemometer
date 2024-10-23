@@ -22,7 +22,7 @@ The **3D Ultrasonic Anemometer** measures wind speed in all three dimensions usi
 - **Arduino**: Controls the ultrasonic pulses and processes the wind data.
 
 ### Project Structure:
-- `Arduino_code`: Contains the Arduino code that handles the measurement process.
+- `3D_Ultrasonic_Anemometer.ino`: Contains the Arduino code that handles the measurement process.
 
 ## How It Works
 
