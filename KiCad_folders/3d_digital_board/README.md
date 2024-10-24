@@ -14,7 +14,7 @@ This folder contains the KiCad design files for the **3D Digital Board** used in
 
 ## Files in this Folder
 - [3D_Digital_Board_Schematic.sch](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/blob/main/KiCad_folders/3d_digital_board/3D_Digital.kicad_sch): The KiCad schematic of the 3D digital board.
-- `3D_Digital_Board_PCB.kicad_pcb`: The PCB layout for the 3D digital board.
+- [3D_Digital_Board_PCB.kicad_pcb](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/blob/main/KiCad_folders/3d_digital_board/3D_Digital.kicad_pcb): The PCB layout for the 3D digital board.
 
 ## Usage
 1. **Open the Schematic**: Use KiCad to open and modify the schematic for the 3D digital board.
