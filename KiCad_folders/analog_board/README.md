@@ -15,7 +15,7 @@ This folder contains the KiCad design files for the **Analog Board** used in the
 - Temperature sensor for environmental adjustments.
 
 ## Files in this Folder
-- `Analog_Board_Schematic.sch`: The KiCad schematic of the analog board.
+- [Analog_Board_Schematic.sch](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/blob/main/KiCad_folders/analog_board/Analog.kicad_sch): The KiCad schematic of the analog board.
 - `Analog_Board_PCB.kicad_pcb`: The PCB layout for the analog board.
 
 ## Usage
