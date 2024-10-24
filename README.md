@@ -9,8 +9,17 @@ This repository is organized into three main directories:
 1. **Arduino_code**: Contains all the Arduino code required to interface with the ultrasonic transducers, perform wind speed and direction calculations, and handle the data acquisition process.
    - [More details can be found in the `Arduino_code/README.md`](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/blob/main/Arduino_code/README.md)
 
-2. **KiCad_folders**: Includes the KiCad schematics and PCB design files for the digital and analog circuits used in the project. These files outline the hardware design and connections between components.
-   - [More details can be found in the `KiCad_folders/README.md`]
+2. **KiCad_folders**: Includes the KiCad schematics and PCB design files for the digital and analog circuits used in the project. These files outline the hardware design and connections between components. The following KiCad folders are included:
+
+   - **Analog Board**: Contains the PCB design for the analog circuit.
+     - [More details can be found in the `Analog Board README.md`](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/blob/main/KiCad_folders/analog_board/README.md)
+
+   - **2D Digital Board**: Contains the PCB design for the 2D digital circuit.
+     - [More details can be found in the `2D Digital Board README.md`](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/tree/main/KiCad_folders/2d_digital_board#readme)
+
+   - **3D Digital Board**: Contains the PCB design for the 3D digital circuit.
+     - [More details can be found in the `3D Digital Board README.md`](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/commit/288637a0b4d976682cc4027f3ba4eee36e0901f0)
+
 
 3. **matlab_code**: This directory contains MATLAB scripts used for data visualization and further analysis of the anemometer's outputs. The scripts allow for the real-time display of wind speed and direction data.
    - [More details can be found in the `matlab_code/README.md`]
