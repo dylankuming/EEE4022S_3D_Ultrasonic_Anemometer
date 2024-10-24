@@ -32,6 +32,7 @@ This repository is organized into three main directories:
 
 ## License
 
+This project is open-source, and all contributions are welcome. You are free to modify and distribute the code under the terms of the MIT license.
 
 
 ## Acknowledgements
