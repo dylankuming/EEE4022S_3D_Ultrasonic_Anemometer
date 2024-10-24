@@ -1,6 +1,6 @@
 # EEE4022S 3D Ultrasonic Anemometer
 
-This repository contains the complete development files for the **3D Ultrasonic Anemometer** project developed as part of the EEE4022S course. The goal of the project is to design, build, and test a low-cost, accurate, and reliable 3D ultrasonic anemometer using Commercial-Off-The-Shelf (COTS) components. The system measures wind speed and direction in three dimensions (X, Y, and Z) using ultrasonic transducers and provides real-time data visualization.
+This repository contains the complete development files for the **3D Ultrasonic Anemometer** project developed as part of the EEE4022S course. The goal of the project is to design, build, and test a low-cost, accurate, and reliable 3D ultrasonic anemometer using Commercial-Off-The-Shelf (COTS) components. The system measures wind data in three dimensions (X, Y, and Z) using ultrasonic transducers and provides real-time data visualisation.
 
 ## Repository Structure
 
