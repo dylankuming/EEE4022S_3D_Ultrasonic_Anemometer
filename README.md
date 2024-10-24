@@ -22,7 +22,7 @@ This repository is organized into three main directories:
 
 
 3. **matlab_code**: This directory contains MATLAB scripts used for data visualization and further analysis of the anemometer's outputs. The scripts allow for the real-time display of wind speed and direction data.
-   - [More details can be found in the `matlab_code/README.md`]
+   - [More details can be found in the `matlab_code/README.md`](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/blob/main/matlab_code/README.md)
 
 ## Getting Started
 
