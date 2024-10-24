@@ -12,7 +12,7 @@ This folder contains the KiCad design files for the **2D Digital Board** used in
 - **74HC4052 Multiplexers**: Routes the signals to the analog board for processing.
 
 ## Files in this Folder
-- `2D_Digital_Board_Schematic.sch`: The KiCad schematic of the 2D digital board.
+- [2D_Digital_Board_Schematic.sch](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/blob/main/KiCad_folders/2d_digital_board/Digital.kicad_sch): The KiCad schematic of the 2D digital board.
 - `2D_Digital_Board_PCB.kicad_pcb`: The PCB layout for the 2D digital board.
 
 ## Usage
