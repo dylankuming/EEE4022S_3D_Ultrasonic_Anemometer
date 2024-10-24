@@ -18,7 +18,7 @@ The **3D Ultrasonic Anemometer** measures wind speed in all three dimensions usi
 ### Components:
 - **Ultrasonic Transducers**: Measure wind speed through sound waves.
 - **Temperature Sensor**: Reads ambient temperature to account for speed of sound variation.
-- **LCD Display**: Shows real-time measurements such as wind speed, phase, and elevation. (ref Matlab code for visual output option)
+- **LCD Display**: Shows real-time measurements such as wind speed, phase, and elevation. Alternatively, for visual output, you can use the [MATLAB script](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/blob/main/matlab_code/3D_Matlab_visual_output.m) to generate a graphical representation.
 - **Arduino**: Controls the ultrasonic pulses and processes the wind data.
 
 ### Project Structure:
