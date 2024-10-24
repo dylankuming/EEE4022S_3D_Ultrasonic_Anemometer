@@ -13,7 +13,7 @@ This MATLAB script connects to an Arduino via serial communication and streams w
 
 ### 1. Connect the Arduino
 
-- Make sure the Arduino loaded with is connected to your computer and is streaming wind data via a serial connection.
+- Make sure the Arduino loaded with [`3D_Ultrasonic_Anemometer.ino`](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/blob/main/Arduino_code/3D_Ultrasonic_Anemometer.ino) is connected to your computer and is streaming wind data via a serial connection.
 - Replace `"COM3"` in the script with the correct port for your Arduino (you can find the correct port in the Arduino IDE).
 
 ```matlab
