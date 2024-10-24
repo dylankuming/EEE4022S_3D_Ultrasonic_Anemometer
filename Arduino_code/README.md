@@ -1,4 +1,4 @@
-# 3D Ultrasonic Anemometer (EEE4022S)
+# 3D Ultrasonic Anemometer Arduino Code
 
 This project implements a **3D ultrasonic anemometer** for measuring wind data across three axes: North-South (NS), East-West (EW), and Top-Bottom (TB). The system uses ultrasonic transducers and calculates wind speed by measuring the time-of-flight (ToF) of sound pulses between the transducers.
 
