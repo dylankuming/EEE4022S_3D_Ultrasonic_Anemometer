@@ -132,7 +132,9 @@ ISR(TIMER1_COMPB_vect) {
   switch (pulse_count) {
     case 15:
       TCCR1A = 0b00000011;  // Disable PWM output
-      OCR1AH = OCR1AH_LONG; // Set longer interval
+
+      // Set longer interval
+      OCR1AH = OCR1AH_LONG; 
       OCR1AL = OCR1AL_LONG;
       OCR1BH = OCR1BH_LONG;
       OCR1BL = OCR1BL_LONG;
@@ -144,7 +146,9 @@ ISR(TIMER1_COMPB_vect) {
       TIFR1 = 0b00100000;       // Clear interrupt flag
       TIMSK1 = 0b00100100;      // Enable input capture interrupts
       zerocrossing_count = 0;
-      OCR1AH = OCR1AH_PWM;      // Reset PWM values
+
+      // Reset PWM values
+      OCR1AH = OCR1AH_PWM;      
       OCR1AL = OCR1AL_PWM;
       OCR1BH = OCR1BH_PWM;
       OCR1BL = OCR1BL_PWM;
@@ -156,7 +160,7 @@ ISR(TIMER1_COMPB_vect) {
         axis_direction = 0;  // Reset direction when all have been measured
       }
 
-      digitalWrite(MUTE, HIGH); // Mute amplifier for the next pulse
+      digitalWrite(MUTE, HIGH); // Mute amplifier for the next pulse burst
 
       // Set axis and direction for the next measurement
       digitalWrite(DIRECTION, (axis_direction & 0b010) ? HIGH : LOW);
@@ -173,7 +177,7 @@ ISR(TIMER1_COMPB_vect) {
 
           // Reset envelope values
           for (uint8_t i = 0; i < 6; ++i) {
-            envelope[measure_set][i] = 192000;
+            envelope[measure_set][i] = 192000; // 15 pulses * (16MHz/40kHz) * 32 rounds
           }
         }
       }
@@ -191,19 +195,21 @@ ISR(TIMER1_COMPB_vect) {
 ISR(TIMER1_CAPT_vect) {
   asm("sbi %0, %1 \n\t" ::"I"(_SFR_IO_ADDR(PORTC)), "I"(PORTC4));  // Set pin A4 high
 
+  // Capture timer value when interrupt occurs
   uint16_t timer_value;
-  uint8_t timer_low = ICR1L;  // Capture timer value
-  timer_value = ICR1H;
-  timer_value <<= 8;
-  timer_value |= timer_low;
+  uint8_t timer_low = ICR1L;  // Read low byte of Input Capture Register
+  timer_value = ICR1H;        // Read high byte of Input Capture Register
+  timer_value <<= 8;          // Shift high byte to correct position
+  timer_value |= timer_low;   // Combine low and high byte to form 16-bit timer value
 
+  // Handle Envelope Detector case (first event of measurement)
   if (zerocrossing_count == 0) {
-    envelope[measure_set][axis_direction] += timer_value;  // Add value to envelope
-    zerocrossing[measure_set][axis_direction][round_count] = 72000; // Initialize zero-crossing value
-    ACSR = 0b01000000;  // Set zero-crossing detector as input capture source
-    TCCR1B = 0b11011001;  // Start with rising edge
+    envelope[measure_set][axis_direction] += timer_value;  // Add timer value to envelope
+    zerocrossing[measure_set][axis_direction][round_count] = 72000; // Initialize zero-crossing value (16MHz/40kHz * 15 pulses * 16 zero crossings - 24000 ticks to align crossings)
+    ACSR = 0b01000000;  // Set analog comparator to use zero-crossing detector
+    TCCR1B = 0b11011001;  // Set rising edge as input capture trigger
   } else {
-    zerocrossing[measure_set][axis_direction][round_count] += timer_value;  // Add to zero-crossing
+    zerocrossing[measure_set][axis_direction][round_count] += timer_value;  // Add timer value to zero-crossing array
     TCCR1B ^= 0b01000000;  // Toggle edge for next capture
 
     if (zerocrossing_count == NUMBER_OF_ZEROCROSSINGS) {
@@ -218,7 +224,7 @@ ISR(TIMER1_CAPT_vect) {
 // Function to calculate temperature from analog sensor
 float temperature() {
   float temp = (float)analogRead(TEMPERATURE_SENSOR);
-  return temp * 0.11366478;  // Convert sensor reading to degrees Celsius
+  return temp / 0.057;  // Convert sensor reading to degrees Celsius
 }
 
 // Function to calculate wind speed using time difference
@@ -226,9 +232,9 @@ double windspeed(int16_t timediff) {
   if (timediff == 0) {
     return 0.0;  // No wind if timediff is zero
   }
-  double temperature = 20.0;  // Assume temperature is 20°C for testing
-  double sos = 331.5 + (0.6 * temperature);  // Speed of sound in air
-  double a = (double)timediff * -0.000000001;
+  float temperature = temperature();  // Get the current temperature in Celsius
+  double sos = 331.3 * sqrt(1 + (temperature / 273.15));  // Speed of sound formula
+  double a = (double)timediff * -0.000000001; // Time difference in nanoseconds
   double b = 2 * DISTANCE;
   double c = a * pow(sos, 2);
   double discriminant = (b * b) - (4 * a * c);
@@ -237,20 +243,22 @@ double windspeed(int16_t timediff) {
 }
 
 void loop() {
+  // Process results when measurement is complete (done_flag is set)
   if (done_flag) {
     digitalWrite(CALC, HIGH);  // Signal calculation in progress
 
     // Convert time-of-flight values to nanoseconds
     for (uint8_t dir = 0; dir < 6; ++dir) {
-      envelope_tof_ns[dir] = envelope[calc_set][dir] * 125 >> 6;  // Envelope ToF
+      envelope_tof_ns[dir] = envelope[calc_set][dir] * 125 >> 6;  // ((env[][]*1/16MHz)/32 rounds)
       zerocrossing_tof_ns[dir] = 0;
       uint32_t reference = envelope[calc_set][dir] >> 1;
       for (uint8_t i = 0; i < NUMBER_OF_ROUNDS; ++i) {
+        // For all 32 rounds, adjust zero-crossing time to ensure the first zero crossing starts at envelope
         while (zerocrossing[calc_set][dir][i] > reference)
           zerocrossing[calc_set][dir][i] -= 6400;
         zerocrossing_tof_ns[dir] += zerocrossing[calc_set][dir][i];
       }
-      zerocrossing_tof_ns[dir] *= 125 >> 10;  // Convert zerocrossing ToF
+      zerocrossing_tof_ns[dir] *= 125 >> 10;  //((zcd[][]*1/16MHz)/(32 rounds * 16 zero crossings)
     }
 
     // Calculate wind speeds for the three axes
