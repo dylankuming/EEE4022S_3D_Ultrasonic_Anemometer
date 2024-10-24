@@ -22,7 +22,7 @@ s = serialport("COM3", 9600); % Change "COM3" to your Arduino's COM port
 
 ### 2. Run the Script
 
-- Open the MATLAB script in MATLAB.
+- Open the [3D_Matlab_visual_output.m](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/blob/main/matlab_code/3D_Matlab_visual_output.m) script in MATLAB.
 - Run the script by pressing the **Run** button or by typing `run` in the MATLAB command window.
 
 ### 3. Visualisation
