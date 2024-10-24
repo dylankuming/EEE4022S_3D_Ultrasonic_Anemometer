@@ -44,6 +44,13 @@ This repository is organized into three main directories:
 This project is open-source, and all contributions are welcome. You are free to modify and distribute the code under the terms of the MIT license.
 
 
+## Author
+
+- **Dylan Kuming**
+  - Date: October, 2024
+
+
+
 ## Acknowledgements
 
 This project was supervised by **Dr. Stephen Paine** and completed as part of the EEE4022S course at the **University of Cape Town**.
