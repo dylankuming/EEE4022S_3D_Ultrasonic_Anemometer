@@ -55,7 +55,7 @@ The following components and connections are used in the project:
 
 ### Additional Required Hardware:
 - Ultrasonic transducers.
-- Analog Board (ref KiCad folder).
+- [Analog Board](https://github.com/dylankuming/EEE4022S_3D_Ultrasonic_Anemometer/tree/main/KiCad_folders/3d_digital_board).
 - 3D Digital Board (ref KiCad folder).
 - Arduino-compatible microcontroller.
 - LCD 16x2 display.
